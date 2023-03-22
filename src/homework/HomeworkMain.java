@@ -11,9 +11,9 @@ public class HomeworkMain {
   public static void main(String[] args) {
     List<Book> books = new ArrayList<>();
 
-    books.add(new Book("Author 3", "Book 3", 250));
-    books.add(new Book("Author 1", "Book 2", 251));
-    books.add(new Book("Author 2", "Book 1", 252));
+    books.add(new Book("Author 3", "Book 3", 25));
+    books.add(new Book("Author 1", "Book 2", 26));
+    books.add(new Book("Author 2", "Book 1", 25));
 
     Collections.sort(books);
     for (Book b : books) {
@@ -22,6 +22,12 @@ public class HomeworkMain {
 
     System.out.println("Книги по названию (по автору) по алфавиту");
     books.sort(new BookTitleComparator(true));
+    for (Book b : books){
+      System.out.println(b);
+    }
+
+    System.out.println("Книги по убыванию кол-ва страниц (по названию по алфавиту)");
+    books.sort(new BookPagesComparator(true));
     for (Book b : books){
       System.out.println(b);
     }
